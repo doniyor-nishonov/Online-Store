@@ -1,4 +1,4 @@
-package backend.role;
+package uz.pdp.backend.role;
 
 public enum ProductType {
     VEGETABLE,

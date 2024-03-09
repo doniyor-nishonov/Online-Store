@@ -1,6 +1,6 @@
-package uz.pdp.backend.tools;
+package uz.pdp.frontend.tools;
 
-import static uz.pdp.backend.tools.COLOR.*;
+import static uz.pdp.frontend.tools.COLOR.*;
 
 /**
  * @author : Doniyor Nishonov
@@ -32,12 +32,13 @@ public interface MENU {
                 Menu:
                 1. Buy Product
                 2. Show Cart
-                3. Clear Cart 
+                3. Remove Product from Cart 
                 4. Show Product List
                 5. Search Product
-                6. Top up the balance
-                7. Archive Cart 
-                8. Delete Account
+                6. Clear cart
+                7. Top up the balance
+                8. Archive Cart 
+                9. Delete Account
                 0. Exit
                 """ + STOP;
     String update = CYAN + """

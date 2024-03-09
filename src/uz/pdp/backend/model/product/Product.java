@@ -1,9 +1,7 @@
-package backend.model.product;
+package uz.pdp.backend.model.product;
 
-import backend.model.BaseModel;
-import backend.role.ProductType;
-
-import java.util.UUID;
+import uz.pdp.backend.model.BaseModel;
+import uz.pdp.backend.role.ProductType;
 
 /**
  * @author : Doniyor Nishonov
@@ -12,25 +10,30 @@ import java.util.UUID;
  **/
 public class Product extends BaseModel {
     private String name;
-    private Integer price;
-    private int count;
+    private double price;
     private ProductType type;
+    private double discount;
 
-    public Product() {
-    }
-
-    public Product(String name, Integer price, int count,ProductType type) {
+    public Product(String name, double price, ProductType type) {
         this.name = name;
         this.price = price;
-        this.count = count;
         this.type = type;
     }
 
     @Override
     public String toString() {
-        return
-                "[" + super.getId() + "] " + name + "  |  " + price + " UZS" +
-                        "  |  " + count + " | " + type;
+        if(discount==0)
+            return
+                name + "  |  " + price + " UZS"  + " | " + type;
+        return name + " | " + price + " UZS /"+"Sale " + discount + " UZS" + " | " + type;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
     }
 
     public ProductType getType() {
@@ -41,14 +44,6 @@ public class Product extends BaseModel {
         this.type = type;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     public String getName() {
         return name;
     }
@@ -57,11 +52,11 @@ public class Product extends BaseModel {
         this.name = name;
     }
 
-    public Integer getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }

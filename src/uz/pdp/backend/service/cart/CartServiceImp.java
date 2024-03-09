@@ -1,4 +1,4 @@
-package uz.pdp.backend.service.carService;
+package uz.pdp.backend.service.cart;
 
 import uz.pdp.backend.model.cart.Cart;
 

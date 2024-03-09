@@ -1,4 +1,4 @@
-package uz.pdp.backend.service.productService;
+package uz.pdp.backend.service.product;
 
 import static uz.pdp.frontend.tools.COLOR.*;
 

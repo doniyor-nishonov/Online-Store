@@ -1,4 +1,4 @@
-package uz.pdp.backend.service.helper;
+package uz.pdp.backend.service.support;
 
 import java.util.List;
 

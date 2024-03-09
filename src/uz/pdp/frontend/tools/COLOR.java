@@ -1,4 +1,4 @@
-package uz.pdp.backend.tools;
+package uz.pdp.frontend.tools;
 
 /**
  * @author : Doniyor Nishonov

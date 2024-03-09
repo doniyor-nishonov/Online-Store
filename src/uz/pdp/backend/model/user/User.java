@@ -1,7 +1,9 @@
-package backend.model.user;
+package uz.pdp.backend.model.user;
 
-import backend.model.BaseModel;
-import backend.role.Role;
+import uz.pdp.backend.model.BaseModel;
+import uz.pdp.backend.role.Role;
+
+import java.math.BigDecimal;
 
 /**
  * @author : Doniyor Nishonov
@@ -11,7 +13,7 @@ import backend.role.Role;
 public class User extends BaseModel {
     private String userName;
     private String password;
-    private Integer balance;
+    private double balance;
     private Role role;
 
     public User(String userName, String password, Role role) {
@@ -24,11 +26,11 @@ public class User extends BaseModel {
     public User() {
     }
 
-    public Integer getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(Integer balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

@@ -1,4 +1,5 @@
-package uz.pdp.backend.tools;
+package uz.pdp.frontend.tools;
+import java.util.List;
 import java.util.Scanner;
 /**
  * @author : Doniyor Nishonov
@@ -19,6 +20,9 @@ public interface Input {
     static String inputStr(String msg){
         System.out.print(COLOR.PURPLE + msg+": " + COLOR.STOP);
         return scannerStr.nextLine();
+    }
+    static boolean checkDataForNotNull(List<?> list){
+        return list!=null&&!list.isEmpty();
     }
 }
 

@@ -1,48 +1,38 @@
-package uz.pdp.backend.model.buy;
+package uz.pdp.backend.model.cart;
 
-import uz.pdp.backend.model.product.Product;
+import uz.pdp.backend.model.BaseModel;
+
 
 /**
  * @author : Doniyor Nishonov
  * @project : online_Shops
  * @date :  2024-02-10-> 21:53
  **/
-public class Buy {
-    private String id;
-    private Product product;
-    private boolean Active;
+public class Cart extends BaseModel {
+    private String userId;
+    private boolean isPaid;
 
-
-    public Buy(String id, Product product) {
-        this.id = id;
-        this.product = product;
-        this.Active = true;
+    public Cart(String userId) {
+        this.userId = userId;
+        this.isPaid = false;
     }
 
-    public Product getProduct() {
-        return product;
+
+    public String getUserId() {
+        return userId;
     }
 
-    public String getId() {
-        return id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public boolean getPaid() {
+        return isPaid;
     }
 
-    public boolean getActive() {
-        return Active;
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
 
-    public void setActive(boolean active) {
-        Active = active;
-    }
 
-    @Override
-    public String toString() {
-        return  product.getName() + "\t | " +
-                product.getPrice() + "\t | " +
-                product.getCount();
-    }
 }

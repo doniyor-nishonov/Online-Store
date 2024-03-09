@@ -1,4 +1,4 @@
-package uz.pdp.backend.service.orderService;
+package uz.pdp.backend.service.order;
 
 import uz.pdp.backend.model.cart.Cart;
 import uz.pdp.backend.model.order.Order;

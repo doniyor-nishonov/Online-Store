@@ -1,11 +1,10 @@
-package uz.pdp.backend.service.userService;
+package uz.pdp.backend.service.user;
 
 import uz.pdp.frontend.tools.COLOR;
 import uz.pdp.backend.role.Role;
 import uz.pdp.backend.model.user.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author : Doniyor Nishonov

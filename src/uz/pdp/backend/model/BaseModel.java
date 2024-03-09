@@ -1,4 +1,4 @@
-package backend.model;
+package uz.pdp.backend.model;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package uz.pdp.backend.model.cart.order;
+package uz.pdp.backend.model.order;
 
 import uz.pdp.backend.model.BaseModel;
 

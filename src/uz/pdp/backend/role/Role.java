@@ -1,4 +1,4 @@
-package backend.role;
+package uz.pdp.backend.role;
 
 /**
  * @author : Doniyor Nishonov
@@ -7,5 +7,6 @@ package backend.role;
  **/
 public enum Role {
     USER,
-    VENDOR
+    VENDOR,
+    BLOCK
 }
