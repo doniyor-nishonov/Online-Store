@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class OrderServiceImp implements OrderService {
-    private ArrayList<uz.pdp.backend.model.order.Order> orderList;
+    private ArrayList<Order> orderList;
 
     public OrderServiceImp() {
         this.orderList = new ArrayList<>();
@@ -36,7 +36,7 @@ public class OrderServiceImp implements OrderService {
     @Override
     public List<Order> getAll(Cart cart) {
         return orderList.stream()
-                .filter((order)->order.getCartId().equals(cart.getId())&& cart.getPaid())
+                .filter((order)->order.getCartId().equals(cart.getId())&& !cart.getPaid())
                 .collect(Collectors.toList());
     }
 

@@ -6,7 +6,6 @@ import uz.pdp.backend.model.product.Product;
 import uz.pdp.backend.role.ProductType;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 import java.util.concurrent.TimeUnit;
@@ -19,6 +18,7 @@ import static uz.pdp.frontend.Main.*;
 import static uz.pdp.frontend.ProductController.*;
 
 public class CartController {
+    public static Cart curCart;
     public static void buyProduct() {
         while (true) {
             ProductType type = getProductType();
@@ -29,8 +29,8 @@ public class CartController {
                 return;
             }
             int countProduct = inputInt("Count");
-            Cart cart = getCart();
-            Order order = new Order(cart.getId(), productId, countProduct);
+            curCart=getCart();
+            Order order = new Order(curCart.getId(), productId, countProduct);
             boolean isWorked = orderServiceService.add(order);
             notifacationService.notificationMessage("Cart","added",isWorked);
             System.out.println("Would you like to buy again?\n" + GREEN + "1.Yes\t2.No\n" + STOP);
@@ -53,7 +53,6 @@ public class CartController {
 
 
     public static void showCartProducts() {
-        Cart curCart = cartServiceImp.getUnpaidUserCart(curUser.getId());
         List<Order> list = orderServiceService.getAll(curCart);
         productListPrint(list);
     }
@@ -62,16 +61,15 @@ public class CartController {
         showCartProducts();
         if (checkDataForNotNull(orderServiceService.getAll(cartServiceImp.getUnpaidUserCart(curUser.getId())))) {
             int index = inputInt("Choose") - 1;
-            Cart cart = cartServiceImp.getUnpaidUserCart(curUser.getId());
-            Order order = orderServiceService.getAll(cart).get(index);
-            orderServiceService.remove(cart.getId(), order.getProductId());
+            Order order = orderServiceService.getAll(curCart).get(index);
+            orderServiceService.remove(curCart.getId(), order.getProductId());
         } else
             System.out.println(RED + "Data Base is Empty" + STOP);
     }
 
     public static void showCart() {
         showCartProducts();
-        List<Order> all = orderServiceService.getAll(getCart());
+        List<Order> all = orderServiceService.getAll(curCart);
         if (checkDataForNotNull(all)) {
             System.out.println(GREEN + "Do you want to buy?\n" + STOP + "[1] - Yes\t\t[0] - No");
             int chose = inputInt("Select");
@@ -106,7 +104,7 @@ public class CartController {
         return sj.toString();
     }
     public static void clearCart(){
-        List<Order> all = orderServiceService.getAll(cartServiceImp.getUnpaidUserCart(curUser.getId()));
+        List<Order> all = orderServiceService.getAll(curCart);
         if(checkDataForNotNull(all)){
             boolean clear = orderServiceService.clear(getCart());
             if (clear)
