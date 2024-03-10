@@ -15,21 +15,13 @@ This project is an online shop implementation with basic features to manage prod
         Access control for admin and customer roles.
 - ***Responsive Design***: 
   -     Ensure a user-friendly experience on various devices.
+# Code sample
 ```java
-public static void login() {
-        String userName = inputStr("User Name");
-        String password = inputStr("Password");
-        curUser = userServiceImp.login(userName, password);
-        if (curUser == null) {
-            System.out.println(RED + "User not found" + STOP);
-        } else if (curUser.getRole().equals(Role.VENDOR)) {
-            vendorProfile();
-        } else if (curUser.getRole().equals(Role.USER)) {
-            userProfile();
-        } else if (curUser.getRole().equals(Role.BLOCK)) {
-            System.out.println(RED + "User blocked " + STOP);
-        }
-    }
+public Product get(String id) {
+  return products.stream()
+          .filter((product -> Objects.equals(product.getId(),id)))
+          .findFirst().orElse(null);
+}
 ```
 ## Installation
 ### 1.Clone Repository:
