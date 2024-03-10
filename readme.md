@@ -33,7 +33,7 @@ public static void login() {
 ```
 ## Installation
 ### 1.Clone Repository:
--       git clone https://github.com/doniyor20054/Online-Store
+-       git clone https://github.com/doniyor20054/Online-Store.git
 ### 2.Navigate to Project Directory:
 -       cd Online-Store
 ### 3.Open Intellij IDEA:
