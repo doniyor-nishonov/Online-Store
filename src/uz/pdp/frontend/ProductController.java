@@ -93,11 +93,9 @@ public class ProductController {
         String name = null;
         Integer price = null;
         ProductType newType = null;
-        int count = 0;
         switch (chose) {
             case 1 -> name = inputStr("Name");
             case 2 -> price = inputInt("Price");
-            case 3 -> count = inputInt("Count");
             case 4 -> {
                 System.out.println(productType);
                 int choseType = inputInt("Select");
