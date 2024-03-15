@@ -67,12 +67,12 @@ public class ProductServiceImp implements ProductService {
     public boolean check(String name) {
         String lowerCaseName = name.toLowerCase();
         return products.stream()
-                .anyMatch(product -> product.getName().toLowerCase().equals(lowerCaseName));
+                .noneMatch(product -> product.getName().toLowerCase().equals(lowerCaseName));
     }
 
     @Override
     public boolean add(Product product) {
-        if (!check(product.getName())) {
+        if (check(product.getName())) {
             setProducts(product);
         }
         return true;

@@ -125,7 +125,7 @@ public class ProductController {
         }
         String name = inputStr("Name");
         int price = 0;
-        if (!productService.check(name)) {
+        if (productService.check(name)) {
             price = inputInt("Price");
         }
         int count = inputInt("Count");

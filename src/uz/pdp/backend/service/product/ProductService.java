@@ -13,7 +13,5 @@ public interface ProductService extends BaseService<Product>, Search<Product>, R
     String update(String name, Integer price, ProductType type, int chose, String id);
     List<Product> show(ProductType type);
     String discount(String id, double sale);
-
     String deleteDiscount(String productId);
-
 }
