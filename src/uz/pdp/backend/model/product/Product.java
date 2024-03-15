@@ -18,6 +18,7 @@ public class Product extends BaseModel {
         this.name = name;
         this.price = price;
         this.type = type;
+
     }
 
     @Override

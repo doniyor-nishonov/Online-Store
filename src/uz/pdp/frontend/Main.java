@@ -31,6 +31,7 @@ public class Main {
     public static NotifacationService notifacationService = new NotificationServiceImp();
 
     public static void main(String[] args) {
+
         System.out.println(BACK_BLACK + BLUE + ITALIC + "\u001B[52m  Welcome to shops  " + STOP);
         while (true) {
             System.out.println(menu);
